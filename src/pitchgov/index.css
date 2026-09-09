@@ -1,0 +1,383 @@
+@import './theme/theme.css';
+
+:where(.pitchgov-app) *, :where(.pitchgov-app) *::before, :where(.pitchgov-app) *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.pitchgov-app {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-canvas);
+  background-image: 
+    linear-gradient(var(--bg-grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-grid-color) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 0%, rgba(225, 214, 245, 0.65) 0%, transparent 70%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  background-position: -1px -1px, -1px -1px, 0 0;
+  background-attachment: fixed;
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: transparent;
+  position: relative;
+}
+
+.main-wrapper {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left var(--transition-smooth);
+}
+
+.app-container.sidebar-collapsed .sidebar,
+.app-container.sidebar-collapsed .gov-sidebar {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.app-container.sidebar-collapsed .main-wrapper {
+  margin-left: 0;
+}
+
+@media (max-width: 1024px) {
+  .main-wrapper {
+    margin-left: 0;
+  }
+}
+
+.content-area {
+  display: block;
+  flex: 1;
+  padding: 2.5rem 3.5rem 6rem 3.5rem;
+  max-width: 1380px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .content-area {
+    padding: 2rem 2rem 5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 1.5rem 1.25rem 4rem 1.25rem;
+  }
+}
+
+/* Editorial Section Divider with Scroll Reveal Growth */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+  margin: 4.5rem 0;
+  border: none;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.section-divider.is-revealed,
+.section-divider.is-visible {
+  transform: scaleX(1);
+}
+
+/* Generic Section Container */
+.dashboard-section {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+/* Buttons & Interactive Elements */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--purple-primary);
+  color: #ffffff;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(117, 96, 168, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--purple-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(117, 96, 168, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--surface-white);
+  color: var(--text-dark);
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--lavender-light);
+  border-color: var(--purple-primary);
+  color: var(--purple-deep);
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--surface-white);
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: var(--lavender-soft);
+  color: var(--purple-deep);
+  border-color: var(--purple-primary);
+}
+
+/* Badges & Tags */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.badge-purple {
+  background-color: var(--lavender-soft);
+  color: var(--purple-deep);
+  border: 1px solid rgba(117, 96, 168, 0.2);
+}
+
+.badge-match {
+  background-color: var(--purple-deep);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.9rem;
+  box-shadow: 0 2px 8px rgba(75, 57, 120, 0.2);
+}
+
+.badge-success {
+  background-color: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.badge-warning {
+  background-color: var(--status-warning-bg);
+  color: var(--status-warning);
+}
+
+/* Cards & Surfaces */
+.surface-card {
+  background-color: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-smooth);
+}
+
+.surface-card-hover {
+  cursor: pointer;
+}
+
+.surface-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--purple-primary);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ==========================================================================
+   PREMIUM SCROLL-TRIGGERED REVEAL ANIMATION SYSTEM
+   ========================================================================== */
+
+/* Base hidden state */
+.reveal-init {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* LEVEL 1 — Major Sections */
+.reveal-level-1 {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-level-1.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LEVEL 2 — Headings & Major Introductions */
+.reveal-level-2 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-level-2.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LEVEL 3 — Cards & Surfaces (subtle scale 0.98 -> 1) */
+.reveal-level-3 {
+  opacity: 0;
+  transform: translateY(35px) scale(0.98);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-level-3.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* LEVEL 4 — Small Content & List Items */
+.reveal-level-4 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 550ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-level-4.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Special CTA Heading Reveal (Level 1 Heavy) */
+.reveal-cta-heading {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-cta-heading.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delay Utilities for Sequence Choreography */
+.delay-50 { transition-delay: 50ms !important; }
+.delay-100 { transition-delay: 100ms !important; }
+.delay-150 { transition-delay: 150ms !important; }
+.delay-200 { transition-delay: 200ms !important; }
+.delay-220 { transition-delay: 220ms !important; }
+.delay-300 { transition-delay: 300ms !important; }
+.delay-400 { transition-delay: 400ms !important; }
+.delay-500 { transition-delay: 500ms !important; }
+.delay-600 { transition-delay: 600ms !important; }
+
+/* ScaleX Connector Growth for Timelines & Progress Tracks */
+.reveal-line-grow {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-line-grow.is-revealed {
+  transform: scaleX(1);
+}
+
+/* Backward compatibility classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-on-scroll.is-visible,
+.animate-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Mobile Animation Distance Adjustments */
+@media (max-width: 768px) {
+  .reveal-level-1,
+  .reveal-cta-heading {
+    transform: translateY(25px);
+  }
+
+  .reveal-level-2,
+  .reveal-level-3 {
+    transform: translateY(20px) scale(0.99);
+  }
+
+  .reveal-level-4 {
+    transform: translateY(12px);
+  }
+}
+
+/* Accessibility - Reduced Motion (Instant Reveal) */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-level-1,
+  .reveal-level-2,
+  .reveal-level-3,
+  .reveal-level-4,
+  .reveal-cta-heading,
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .reveal-line-grow {
+    transform: scaleX(1) !important;
+    transition: none !important;
+  }
+}
+

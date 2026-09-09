@@ -1,0 +1,28 @@
+.roll-text-container {
+  display: inline-flex;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.roll-char-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.roll-char-orig {
+  display: inline-block;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.roll-char-dupe {
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  will-change: transform;
+  pointer-events: none;
+}

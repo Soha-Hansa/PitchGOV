@@ -1,0 +1,104 @@
+.solution-section {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #E98B50; /* Updated per user request */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+.solution-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  pointer-events: none;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 2px, transparent 2px);
+  background-size: 40px 40px;
+}
+
+.solution-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem; /* Changed from -5rem to add a large top gap */
+  padding: 0 4rem;
+  gap: 4rem;
+}
+
+.solution-left-media {
+  flex: 1.4; /* Takes up more space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.workflow-video {
+  width: 100%;
+  max-width: 850px; /* Increased from 600px */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.solution-right-content {
+  flex: 0.8; /* Takes up less space */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.solution-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Typography styles */
+.solution-heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1.2;
+  text-align: left;
+  margin: 0;
+}
+
+.solution-heading-row {
+  display: block;
+}
+
+.solution-paragraph {
+  font-size: 1.25rem;
+  color: #1a1a2e;
+  font-weight: 500;
+  max-width: 600px; /* Reduced max-width to fit the smaller flex column better */
+  margin: 0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.highlight-text {
+  color: #ffffff; 
+}
+
+/* Hide overflow on the wrapper for letter stagger */
+.letter-wrapper {
+  overflow: hidden;
+  display: inline-block;
+  padding-bottom: 1rem;
+  margin-bottom: -1rem;
+}

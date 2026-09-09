@@ -1,0 +1,96 @@
+.problem-section {
+  position: relative;
+  z-index: 10; /* Ensures it slides cleanly over the pinned Hero section */
+  min-height: 100vh;
+  width: 100%;
+  background-color: transparent; /* Makes it transparent so the blurred hero is visible behind it */
+  color: #1a1a2e;
+  padding: 150px 0 40px 0; /* Reduced bottom padding to tighten the gap before the Solution Section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* (The rest of the unused problem-header/cards classes are removed since you deleted the jsx content earlier, keeping it clean) */
+
+.problem-bg-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  /* Distinct ellipse spotlight shape */
+  background-image: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(188, 79, 79, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+  border: none;
+  border-radius: 40px;
+  z-index: 0;
+}
+
+.problem-content {
+  position: relative;
+  z-index: 1; /* Lays above the bg box */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 75vh;
+  padding: 0 5rem;
+  box-sizing: border-box;
+}
+
+.problem-left-text {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.problem-left-text h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.problem-subtext {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.problem-paragraph {
+  font-size: 1.15rem;
+  color: #4a4a5e;
+  line-height: 1.7;
+  max-width: 550px;
+}
+
+.problem-paragraph strong {
+  color: var(--violet-dark, #BC4F4F);
+}
+
+.problem-right-graphic {
+  flex: 1;
+  /* Holds space for a graphic on the right */
+}
+
+@media (max-width: 968px) {
+  .problem-content {
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 5rem;
+  }
+  .problem-left-text h2 {
+    font-size: 2.5rem;
+  }
+}

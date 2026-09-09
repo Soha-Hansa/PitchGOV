@@ -1,0 +1,190 @@
+.impact-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 8rem 2rem 10rem 2rem;
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(ellipse at 0% 50%, rgba(233, 139, 80, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 50%, rgba(16, 185, 129, 0.25) 0%, transparent 60%),
+    radial-gradient(rgba(233, 139, 80, 0.3) 1.75px, transparent 1.75px),
+    linear-gradient(to bottom, #ffffff 0%, #f8fafc 45%, rgba(233, 139, 80, 0.65) 85%, #E98B50 100%);
+  background-size: 100% 100%, 100% 100%, 28px 28px, 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4.5rem;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.impact-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: linear-gradient(to bottom, rgba(233, 139, 80, 0) 0%, rgba(233, 139, 80, 0.5) 50%, #E98B50 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.impact-header {
+  text-align: center;
+  max-width: 950px;
+  position: relative;
+  z-index: 2;
+}
+
+.impact-subtitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #BC4F4F;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.impact-title {
+  font-size: 4.8rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.impact-description {
+  font-size: 1.25rem;
+  color: #64748b;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- VIDEO COMPONENT --- */
+.impact-video-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.impact-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(188, 79, 79, 0.25),
+              0 0 40px rgba(233, 139, 80, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+  box-sizing: border-box;
+}
+
+.impact-video-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 35px 70px -15px rgba(188, 79, 79, 0.35),
+              0 0 50px rgba(233, 139, 80, 0.3);
+}
+
+.impact-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.impact-video-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* --- STATS GRID --- */
+.impact-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  align-items: stretch;
+  position: relative;
+  z-index: 2;
+}
+
+.impact-stat-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.impact-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(188, 79, 79, 0.12);
+  border-color: #F3CD97;
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #BC4F4F;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+@media (max-width: 900px) {
+  .impact-title {
+    font-size: 3.2rem;
+  }
+
+  .impact-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .impact-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

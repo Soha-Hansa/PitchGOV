@@ -1,0 +1,130 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent; /* Prepare for border transition */
+  box-sizing: border-box;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scrolled State for Navbar */
+.navbar.scrolled {
+  background: transparent; 
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  transition: color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Darken logo text when scrolled */
+.navbar.scrolled .nav-logo {
+  color: #1a1a2e;
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-middle-links {
+  display: flex;
+  gap: 2.75rem;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Hide middle links when scrolled so only Logo and Get Started remain */
+.navbar.scrolled .nav-middle-links {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -10px); /* Slight upward drift as it fades out */
+}
+
+.nav-middle-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Darken link text when scrolled */
+.navbar.scrolled .nav-middle-links a {
+  color: #1a1a2e;
+}
+
+.nav-middle-links a:hover {
+  color: var(--violet-dark);
+}
+
+/* Modify RightBtn colors via CSS variables when scrolled */
+.navbar.scrolled .bubbles {
+  --c2: #1a1a2e; /* Dark border and text */
+  --c1: #ffffff; /* White text on hover inside bubble */
+}
+
+/* ========================================= */
+/* Revert to white when entering dark sections */
+/* ========================================= */
+.navbar.dark-section .wordmark-pitch,
+.navbar.dark-section .wordmark-gov {
+  color: #ffffff !important;
+}
+
+.navbar.dark-section .logo-solid-fill {
+  fill: #ffffff !important;
+}
+
+.navbar.dark-section .logo-cutout-fill {
+  fill: #E98B50 !important; /* Matches the orange background of the solution section */
+}
+
+.navbar.scrolled.dark-section .nav-middle-links a {
+  color: #ffffff;
+}
+
+.navbar.scrolled.dark-section .bubbles {
+  --c2: #ffffff;
+  --c1: #1a1a2e;
+}
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 1024px) {
+  .nav-middle-links {
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav-middle-links {
+    display: none;
+  }
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+}

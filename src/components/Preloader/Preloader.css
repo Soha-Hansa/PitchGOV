@@ -1,0 +1,163 @@
+/* Preloader Overlay Container */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+  display: flex;
+  pointer-events: none; /* Allows clicks through to underneath once content is hidden */
+}
+
+/* Background Panels for Slicing Reveal - Indian Flag */
+.preloader-panels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.preloader-panel {
+  height: 33.334%; /* 3 panels = 100% */
+  width: 100%;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  will-change: transform;
+}
+
+.top-saffron {
+  background-color: rgba(255, 153, 51, 0.8); /* Saffron */
+}
+
+.middle-white {
+  background-color: rgba(255, 255, 255, 0.85); /* White */
+}
+
+.bottom-green {
+  background-color: rgba(19, 136, 8, 0.8); /* Green */
+}
+
+/* Content Container */
+.preloader-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000080; /* Navy Blue (Ashoka Chakra color) */
+  font-family: 'Public Sans', system-ui, sans-serif;
+  z-index: 2;
+  pointer-events: auto; /* Block clicks while loading */
+}
+
+/* Branding */
+.preloader-brand {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  color: #000080;
+}
+
+/* Massive Minimalist Counter */
+.preloader-counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preloader-counter {
+  font-size: 14vw;
+  font-weight: 900;
+  line-height: 0.9;
+  display: flex;
+  align-items: baseline;
+  color: #000080;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+.preloader-counter .percent {
+  font-size: 4vw;
+  margin-left: 0.2rem;
+  font-weight: 800;
+  color: #000080;
+}
+
+/* Animated Words */
+.preloader-words-wrapper {
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.preloader-words-clip {
+  position: relative;
+  height: 2.5rem;
+  overflow: hidden;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.preloader-word {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #000080;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Edge-to-Edge Progress Track */
+.preloader-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.preloader-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%); /* Indian Flag Gradient */
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .preloader-brand {
+    top: 20px;
+    left: 20px;
+    font-size: 1rem;
+  }
+  .preloader-counter {
+    font-size: 24vw;
+  }
+  .preloader-counter .percent {
+    font-size: 8vw;
+  }
+  .preloader-word {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+}

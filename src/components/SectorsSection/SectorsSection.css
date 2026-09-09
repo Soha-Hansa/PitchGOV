@@ -1,0 +1,415 @@
+.sectors-section {
+  width: 100%;
+  padding: 8rem 2rem;
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(ellipse at 0% 50%, rgba(233, 139, 80, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 50%, rgba(184, 249, 211, 0.4) 0%, transparent 60%),
+    radial-gradient(rgba(233, 139, 80, 0.35) 1.75px, transparent 1.75px),
+    linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+  background-size: 100% 100%, 100% 100%, 28px 28px, 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sectors-glow-left {
+  position: absolute;
+  top: 50%;
+  left: -200px;
+  transform: translateY(-50%);
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(233, 139, 80, 0.45) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(60px);
+}
+
+.sectors-glow-right {
+  position: absolute;
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%);
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(184, 249, 211, 0.55) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(60px);
+}
+
+.sectors-header {
+  text-align: center;
+  max-width: 950px;
+  margin-bottom: 4.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sectors-subtitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #BC4F4F;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.sectors-title {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.sectors-description {
+  font-size: 1.2rem;
+  color: #64748b;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* --- COMPLEX NEURAL AI GRAPH GRAPHIC --- */
+.complex-neural-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 2.5rem auto 0 auto;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.4),
+              0 0 30px rgba(188, 79, 79, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.neural-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: monospace, system-ui;
+  font-size: 0.78rem;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #34d399;
+  letter-spacing: 1px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: live-blink 1.5s infinite;
+}
+
+@keyframes live-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.vector-metrics {
+  color: #94a3b8;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.vector-metrics strong {
+  color: #F3CD97;
+}
+
+.neural-graph-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 320px;
+}
+
+.neural-column {
+  width: 280px;
+  z-index: 2;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.column-icon {
+  font-size: 1.5rem;
+}
+
+.column-header h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.column-header p {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.nodes-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.complex-node {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.complex-node:hover,
+.complex-node.active-highlight {
+  background: rgba(188, 79, 79, 0.2);
+  border-color: #F3CD97;
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(188, 79, 79, 0.3);
+}
+
+.node-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.node-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.node-tag {
+  font-size: 0.7rem;
+  color: #F3CD97;
+  font-weight: 600;
+}
+
+.node-tag.green {
+  color: #6ee7b7;
+}
+
+.node-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F3CD97;
+}
+
+.node-indicator.green {
+  background: #34d399;
+}
+
+.node-port {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #BC4F4F;
+  border: 2px solid #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-port {
+  right: -5px;
+}
+
+.left-port {
+  left: -5px;
+}
+
+/* --- CENTER CORE & SVG CABLES --- */
+.neural-center-core {
+  flex: 1;
+  position: relative;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neural-cables-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.cable-flow-1 { animation: cable-dash 15s linear infinite; }
+.cable-flow-2 { animation: cable-dash 12s linear infinite reverse; }
+.cable-flow-3 { animation: cable-dash 18s linear infinite; }
+.cable-flow-4 { animation: cable-dash 14s linear infinite reverse; }
+
+@keyframes cable-dash {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.neural-ai-processor {
+  position: relative;
+  z-index: 5;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.95);
+  border: 2px solid #F3CD97;
+  box-shadow: 0 0 30px rgba(188, 79, 79, 0.6);
+}
+
+.processor-glow-bg {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(188, 79, 79, 0.4) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.processor-chip {
+  color: #F3CD97;
+  z-index: 2;
+  animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #F3CD97); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 12px #F3CD97); }
+}
+
+.processor-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-top: 4px;
+  z-index: 2;
+  font-family: monospace;
+}
+
+.processor-orbital-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px stroke transparent;
+}
+
+.processor-orbital-ring.r1 {
+  inset: -8px;
+  border-top: 2px solid #F3CD97;
+  border-bottom: 2px solid #F3CD97;
+  animation: spin-r1 6s linear infinite;
+}
+
+.processor-orbital-ring.r2 {
+  inset: -16px;
+  border-left: 2px solid #34d399;
+  border-right: 2px solid #34d399;
+  animation: spin-r2 9s linear infinite reverse;
+}
+
+@keyframes spin-r1 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes spin-r2 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Bottom Bar */
+.neural-bottom-bar {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ticker-bullet {
+  color: #10b981;
+}
+
+.sectors-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 850px) {
+  .sectors-title {
+    font-size: 2.5rem;
+  }
+
+  .neural-graph-body {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .neural-column {
+    width: 100%;
+  }
+
+  .neural-center-core {
+    display: none;
+  }
+
+  .neural-top-bar, .neural-bottom-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .sectors-grid {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}

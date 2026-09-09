@@ -1,0 +1,40 @@
+.gov-final-section {
+  background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 5rem 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(188, 79, 79, 0.28);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .gov-final-section {
+    padding: 3.5rem 1.5rem;
+  }
+}
+
+.gov-final-content {
+  position: relative;
+  z-index: 2;
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.gov-final-heading {
+  font-size: clamp(2.6rem, 4.8vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: #FFFFFF !important;
+  margin-bottom: 1.5rem;
+}
+
+.gov-final-subtext {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: 2.25rem;
+  line-height: 1.6;
+}

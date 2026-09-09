@@ -1,0 +1,84 @@
+.gov-apps-section {
+  margin-bottom: 6rem;
+}
+
+.gov-apps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gov-app-card-surface {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  transition: all var(--transition-smooth);
+}
+
+.gov-app-card-surface:hover {
+  border-color: var(--purple-primary);
+  box-shadow: var(--shadow-hover);
+}
+
+.gov-app-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 500px;
+}
+
+.gov-app-startup-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.gov-app-challenge-title {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.gov-app-metrics-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.gov-app-metric-unit {
+  display: flex;
+  flex-direction: column;
+}
+
+.gov-app-lbl {
+  font-size: 0.7rem;
+  color: var(--text-subtle);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gov-app-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+@media (max-width: 900px) {
+  .gov-app-card-surface {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .gov-app-metrics-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

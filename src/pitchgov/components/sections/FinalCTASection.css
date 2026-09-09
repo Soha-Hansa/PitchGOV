@@ -1,0 +1,85 @@
+.final-cta-section {
+  background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 5rem 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(188, 79, 79, 0.28);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .final-cta-section {
+    padding: 3.5rem 1.5rem;
+  }
+}
+
+.final-cta-bg-glow {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.final-cta-heading {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #FFFFFF !important;
+  margin-bottom: 1.5rem;
+}
+
+.final-cta-subtext {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.final-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Custom button styles inside deep CTA section */
+.final-cta-section .btn-primary {
+  background-color: #FFFFFF;
+  color: var(--purple-deep);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+.final-cta-section .btn-primary:hover {
+  background-color: var(--surface-card);
+  color: var(--purple-dark);
+  transform: translateY(-2px);
+}
+
+.final-cta-section .btn-secondary {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.final-cta-section .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}

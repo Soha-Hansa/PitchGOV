@@ -1,0 +1,47 @@
+.pitchgov-logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  user-select: none;
+}
+
+.pitchgov-logo-symbol {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pitchgov-logo-text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pitchgov-logo-wordmark {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  display: flex;
+  align-items: baseline;
+}
+
+.wordmark-pitch {
+  color: #2B1809;
+}
+
+.wordmark-gov {
+  color: #E98B50;
+}
+
+.pitchgov-logo-tagline {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #716C78;
+  letter-spacing: 0.02em;
+  margin-top: 0.25rem;
+  white-space: nowrap;
+}

@@ -1,0 +1,172 @@
+.how-it-works-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hiw-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hiw-header h2 {
+  font-size: 3rem;
+  color: #1a1a2e;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+}
+
+.hiw-header p {
+  font-size: 1.25rem;
+  color: #475569;
+  margin: 0;
+  font-weight: 500;
+}
+
+.hiw-flow-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hiw-flow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.hiw-card {
+  position: relative;
+  flex: 1;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 350px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.hiw-card:hover {
+  transform: translateY(-5px);
+}
+
+.hiw-card-num {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.hiw-card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.hiw-card-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.hiw-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.hiw-card-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hiw-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+}
+
+/* Return Loop */
+.hiw-bottom-loop {
+  position: relative;
+  width: 78%;
+  height: 50px;
+  border: 2px solid #ffffff; /* Changed to white */
+  border-top: none;
+  border-radius: 0 0 30px 30px;
+  margin-top: 4rem; /* Increased significantly to add a gap between the arrow and the cards */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hiw-bottom-loop::before,
+.hiw-bottom-loop::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #ffffff; /* Changed to white */
+}
+
+.hiw-bottom-loop::before {
+  left: -6px;
+}
+
+.hiw-bottom-loop::after {
+  right: -6px;
+}
+
+.loop-pill {
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transform: translateY(50%); /* Centered on the line */
+}
+
+@media (max-width: 1024px) {
+  .hiw-flow {
+    flex-direction: column;
+  }
+  .hiw-arrow {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
+  .hiw-bottom-loop {
+    display: none;
+  }
+}

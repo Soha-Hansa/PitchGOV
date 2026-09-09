@@ -1,0 +1,46 @@
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 150px; /* Adapted from 200px to fit better with the solution section */
+  background-color: #1a1a2e; /* Updated to theme dark color */
+  padding: 1.5rem 0;
+  border-top: 4px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.marquee-track {
+  display: flex;
+  will-change: transform;
+}
+
+.marquee-half {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marquee-content {
+  font-family: inherit;
+  font-size: 7rem;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff; /* Updated to pure white */
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-right: 2rem;
+}
+
+.marquee-icon {
+  margin: 0 2rem;
+  width: 5rem;
+  height: 5rem;
+  color: #E98B50; /* Matches the soft violet of the Solution Section */
+  flex-shrink: 0;
+}

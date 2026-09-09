@@ -1,0 +1,312 @@
+.gov-ai-centerpiece-section {
+  margin-bottom: 6rem;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem;
+  box-shadow: 0 12px 36px -6px rgba(70, 43, 143, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .gov-ai-centerpiece-section {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.ai-challenge-context-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, var(--lavender-soft), var(--surface-subtle));
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ai-context-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--purple-dark);
+}
+
+.ai-context-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Master SVG & Node Flow Interactive Canvas */
+.ai-hero-flow-canvas {
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.ai-nodes-three-column {
+  display: grid;
+  grid-template-columns: 1.1fr auto 1.3fr auto 1.2fr;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .ai-nodes-three-column {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+.ai-node-box {
+  background-color: var(--lavender-soft);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: all var(--transition-smooth);
+}
+
+.ai-node-box.dominant {
+  border-color: var(--purple-primary);
+  background: linear-gradient(135deg, var(--lavender-light), var(--surface-card));
+  box-shadow: 0 8px 24px rgba(112, 82, 196, 0.18);
+}
+
+.ai-node-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--purple-primary);
+  text-transform: uppercase;
+}
+
+.ai-node-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.ai-node-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.cap-badge {
+  font-size: 0.72rem;
+  background-color: var(--lavender-light);
+  color: var(--text-dark);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  font-weight: 600;
+}
+
+/* Central AI Analysis Box */
+.ai-core-analysis-box {
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple-dark));
+  color: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 12px 32px rgba(45, 24, 99, 0.35);
+  position: relative;
+}
+
+.ai-core-icon-ring {
+  width: 52px;
+  height: 52px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
+}
+
+.ai-core-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.ai-core-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+/* Animated Connector Line Paths */
+.ai-connector-svg-wrap {
+  width: 70px;
+  height: 50px;
+  overflow: visible;
+}
+
+@media (max-width: 1024px) {
+  .ai-connector-svg-wrap {
+    transform: rotate(90deg);
+    margin: 0 auto;
+  }
+}
+
+.dash-path-draw {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  transition: stroke-dashoffset 1400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dash-path-draw.is-drawn {
+  stroke-dashoffset: 0;
+}
+
+/* Hero Score 94% Display Banner */
+.hero-score-banner {
+  background: linear-gradient(135deg, var(--lavender-light), var(--surface-card));
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-score-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.hero-score-number-big {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 7vw, 5.5rem);
+  font-weight: 800;
+  color: var(--purple-deep);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.hero-score-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--purple-deep);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+/* Match Factors Grid */
+.match-factors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .match-factors-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.factor-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.factor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.factor-lbl {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.factor-pct {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--purple-primary);
+}
+
+.factor-track {
+  height: 9px;
+  background-color: var(--bg-canvas-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.factor-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--purple-primary), var(--purple-deep));
+  border-radius: var(--radius-pill);
+  transition: width 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Two Editorial Reasoning Columns */
+.ai-reasoning-cols {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .ai-reasoning-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ai-reason-card {
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ai-reason-card.why-match {
+  background-color: var(--lavender-light);
+  border: 1px solid var(--border-strong);
+}
+
+.ai-reason-card.gap-notes {
+  background-color: var(--lavender-soft);
+  border: 1px solid var(--border-light);
+}
